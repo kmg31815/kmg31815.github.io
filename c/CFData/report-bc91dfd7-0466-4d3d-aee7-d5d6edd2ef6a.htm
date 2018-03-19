@@ -1,0 +1,226 @@
+﻿<meta http-equiv=Content-Type content=text/html;charset=UTF-8>
+<style>
+textarea{width:100%;}
+.hide{display:none;}
+.show{display:block;}
+.範例鈕{background:lightyellow;font-weight:bold;color:blue;border:solid 1px red;cursor:pointer;}
+.執行鈕{background:lightyellow;font-weight:bold;color:blue;border:solid 1px red;cursor:pointer;}
+.批改鈕{background:lightyellow;font-weight:bold;color:blue;border:solid 1px red;cursor:pointer;}
+.通過{background:red;color:yellow;font-weight:bold;border:solid 1px red;cursor:pointer;}
+.不通過,.未通過,.未通過暗中測資{background:black;color:yellow;font-weight:bold;border:solid 1px red;cursor:pointer;}
+.暫通過檢測{background:blue;color:yellow;font-weight:bold;border:solid 1px red;cursor:pointer;}
+.未通過鍵詞檢查,.未批改{background:black;color:yellow;font-weight:bold;border:solid 1px red;cursor:pointer;}
+.FrenzyClaQiz{font-weight:bold;}
+.錯行焦{background:yellow;color:blue;cursor:pointer;font-family:monospace;}
+.錯行常{background:transparent;color:black;cursor:pointer;font-family:monospace;}
+body.Succ #語法規範{display:none}
+body.Succ #語量規範{display:none}
+
+.個資 td{font-size:large;color:blue;font-weight:bold;}
+
+
+xbody.NoStuExe #語法規範 .標身{background:pink;}
+body.NoTeaExe #實驗訊息 ,body.NoStuExe #實驗訊息 {background:pink;}
+.underline{text-decoration:underline;}
+.same{color:blue;background:white;}
+.diff{color:red;background:yellow;}
+
+.r p{margin:0px;padding:0px 6px 0px 6px;border-left:1px solid;border-right:1px solid;}
+.r6{display:block;height: 1px;overflow:hidden;margin: 0 6px;background:#000;}
+.r3{display:block;height: 1px;overflow:hidden;margin: 0 3px;border-left:3px solid;border-right:3px solid;}
+.r2{display:block;height: 1px;overflow:hidden;margin: 0 2px;border-left:1px solid;border-right:1px solid;}
+.r1{display:block;height: 1px;overflow:hidden;margin: 0 1px;border-left:1px solid;border-right:1px solid;}
+.r p.square{width:80;height:72;vertical-align:middle;}
+.r table.square{width:100%;height:100%;}
+.r p.box{vertical-align:middle;text-align:center;width:80;}
+.r table.box{}
+
+.da{
+font-size: 0px; line-height: 0%; width: 0px;
+border-top: 20px solid #77c;
+border-left: 15px solid transparent;
+border-right: 15px solid transparent;
+}
+
+.ua{
+font-size: 0px; line-height: 0%; width: 0px;
+border-bottom: 20px solid #77c;
+border-left: 15px solid transparent;
+border-right: 15px solid transparent;
+margin:0px;
+padding:0px;
+}
+
+.la{
+vertical-align:middle;
+font-size: 0px; line-height: 0%; width: 0px;
+border-top: 15px solid transparent;
+border-right: 20px solid #77c;
+border-bottom: 15px solid transparent;
+}
+.ra{
+vertical-align:middle;
+font-size: 0px; line-height: 0%; width: 0px;
+border-top: 15px solid transparent;
+border-left: 20px solid #77c;
+border-bottom: 15px solid transparent;
+}
+.av{
+background:skyblue;padding:3px 2px 0px 2px;
+}
+.ah{vertical-align:middle;background:skyblue;}
+
+.隱標題 .標同 {display:none;}
+.隱標題 .標異 {display:inline;}
+.現標題 .標同 {display:inline;}
+.現標題 .標異 {display:none;}
+.現標題 {display:block}
+.隱標題 {display:inline}
+.靜標頭 {background:lightpink;border:solid 1px blue;}
+.隱標題 .標頭{background:blue;color:yellow;border:solid 1px red;cursor:pointer;height:19pt;position:relative;bottom:-1pt;}
+.現標題 .標頭{background:palegreen;border:solid 1px blue;cursor:pointer;height:19pt;position:relative;bottom:-1pt;}
+
+.隱標頭 {background:blue;color:yellow;border:solid 1px red;cursor:pointer;}
+.現標頭 {background:palegreen;border:solid 1px blue;}
+
+.單機 .單隱{display:none;}
+body.NoCom{background:pink;}
+body.NoTeaExe {background:pink;}
+body.NoStuExe {background:beige;}
+#時間 {border:solid 1px;}
+
+.NO-OUTPUT, .WRONG-ANSWER, .TIMELIMIT, .PRESENTATION-ERROR, .COMPILER-ERROR, .RUN-ERROR{color:red;font-weight:bold;border:double 3px}
+.CORRECT{color:blue;font-weight:bold;border:double 3px}
+
+</style>
+
+
+<script type="text/javascript">
+function rc(data,cls){
+  document.write("<div class=r><b class=r6></b><b class=r3></b><b class=r2></b><b class=r1></b><b class=r1></b><p class="+cls+"><table width=100% height=100%><tr><td align=center valign=middle>");
+  document.write(data);
+  document.write("</td></tr></table></p><b class=r1></b><b class=r1></b><b class=r2></b><b class=r3></b><b class=r6></b></div>");
+}
+function rcbox(data){
+  document.write("<table><tr><td>");
+  rc(data,"box");
+  document.write("</td></tr></table>");
+}
+
+//debugger;
+
+function OBJ(objorname){
+  if(objorname.constructor==String) return document.all.item(objorname);//document.getElementById(objorname);
+	else return objorname;
+}
+function DrawKeysOnce(){
+  var date= new Date();
+  var now=date.getTime();
+  ajax_get("http://localhost:8080/frenzy-local-keywords.php?time="+now,DrawKeys);
+}
+function DrawKeysTrigger(){
+  DrawKeysOnce();
+  setTimeout("DrawKeysTrigger()",1000);
+}
+//DrawKeysTrigger();
+function DrawKeys(doc){
+  //alert(doc);
+  var obj=OBJ("checkeys");//alert(obj);//.innerHtml=doc;
+  if(obj!=null) obj.innerHTML=doc;
+}
+function ShowKeys(){ if(OBJ("語量規範")!=null) 語量規範.className="現標題";}
+function HideKeys(doc){ if(OBJ("語量規範")!=null) 語量規範.className="隱標題"; if(OBJ("語量規範INP")!=null)語量規範INP.value="語量規範("+doc+")";}
+
+
+
+function ShowHide(obj){
+  if(obj==null)return;
+  if(obj.className!="hide") obj.className="hide";
+  else obj.className="show";
+}
+function ShowHideTitle(obj){
+  if(obj==null)return;
+  if(obj.className!="隱標題") obj.className="隱標題";
+  else obj.className="現標題";
+}
+
+function 面板全開(){題目資料.className=語法規範.className=語意檢測.className=docsmove.className="現標題";}
+function 面板全關(){題目資料.className=語法規範.className=語意檢測.className=docsmove.className="隱標題";}
+function 開(name){面板全關();OBJ(name).className="現標題";}
+function InputAdd(){Arg.rows+=5;Inp.rows+=5;}
+function InputSub(){var rows=Arg.rows-5; if(rows<1)rows=1; Arg.rows=Inp.rows=rows;}
+function showtime(){
+   var now = new Date();
+   var hours = now.getHours();
+   var minutes = now.getMinutes();
+   var seconds = now.getSeconds();
+   var timeValue = "" +hours+":"+minutes+":"+seconds;
+   時間.innerHTML = timeValue;
+   setTimeout("showtime()",1000)
+}
+</script>
+
+<body class= xonload=showtime(); >
+<span style=background:white;color:blue><b><table border=1><tr><td><font size=6 color=blue>金美君310262</font></td><td><span id=時間></span></td></table></b></span>
+
+<br>
+<span id=實驗訊息 class=現標題><span class=標頭 onclick=ShowHideTitle(實驗訊息);>
+<table style=display:inline border=1><tr>
+<td align=middle width=100 class=通過>通過</td>
+</tr></table>
+</span>&nbsp;<span class=標同>12詞，72字元。<br></span>&nbsp;</span>
+<br><span><span class=CORRECT>5:CORRECT</span></span>
+
+<span id=題目資料 class=現標題><br class=標同><input type=button class=標頭 onclick=ShowHideTitle(題目資料); frenzy_action=題目資料 value=題目資料>
+<span class=標同><span class=FrenzyClaQiz style="border:solid 1px red">(F008) 溢出字元-\ : 輸出相同的字串</span></span>&nbsp;</span>
+
+<span id=語法規範 class=隱標題><br class=標同><input type=button class=標頭 onclick=ShowHideTitle(語法規範); frenzy_action=語法規範 value=語法規範>
+<span class=標同><small>您編譯資訊是由向外呼叫編(直)譯器所產生，編(直)譯器廠商商標歸屬於其合法擁有者，特此聲明。</small><span class=FrenzyClaBld><table border=1><tr><td frenzy_action=編譯錯行 class=錯行常 onmouseover=this.className='錯行焦'; onmouseout=this.className='錯行常';><nobr></nobr></td></tr></table></span></span>&nbsp;</span>
+
+<span id=語量規範 class=現標題><br class=標同><input type=button class=標頭 onclick=ShowHideTitle(語量規範); id=語量規範INP frenzy_action=語量規範 value=語量規範>
+<span class=標同><div id=checkeys></div></span>&nbsp;</span>
+
+<span id=語意檢測 class=現標題><br class=標同><input type=button class=標頭 onclick=ShowHideTitle(語意檢測); frenzy_action=語意檢測 value=語意檢測>
+<span class=標同>
+<input type=button value=輸入區放大 frenzy_action=輸入加高 onclick=InputAdd();> <input type=button value=輸入區縮小 frenzy_action=輸入減低 onclick=InputSub();>
+<table width=100% border=1>
+<tr class=hide><td width=100>命令列參數</td><td><textarea id=Arg rows=6> </textarea></td></tr>
+<tr class=FrenzyClaInp><td width=100>標準輸入串</td><td><textarea id=Inp rows=6></textarea></td></tr>
+</table>
+<table border=1 width=100%>
+<tr class=FrenzyClaOut><td width=100>您的輸出串</td><td width=50% valign=top>&nbsp;<pre><span class=same>﻿C:\Program\CodingFrenzy</span></pre></td><td width=100>正確輸出串</td><td width=50% valign=top>&nbsp;<pre><span class=same>﻿C:\Program\CodingFrenzy</span></pre></td></tr>
+<tr class=FrenzyClaErr><td width=100>您的錯誤串</td><td colspan=3 width=50% valign=top>&nbsp;<pre><span class=same>﻿</span></pre></td></tr>
+<tr class=FrenzyClaErr><td width=100>正確錯誤串</td><td colspan=3 width=50% valign=top>&nbsp;<pre><span class=same>﻿</span></pre></td></tr>
+<tr class=hide><td width=100>您的附屬檔</td><td width=50% valign=top>&nbsp;<pre></pre></td><td width=100>正確附屬檔</td><td width=50% valign=top>&nbsp;<pre></pre></td></tr>
+<tr class=FrenzyClaGcs><td width=100>您的耗時(GCS)</td><td width=50% valign=top>&nbsp;<pre>0.124027</pre></td><td width=100>標準耗時(GCS)</td><td width=50% valign=top>&nbsp;<pre>0.125304</pre></td></tr>
+</table>
+</span>&nbsp;</span>
+
+<span id=卷宗移轉 class=現標題><br class=標同><input type=button class=標頭 onclick=ShowHideTitle(卷宗移轉); frenzy_action=卷宗移轉 value=卷宗移轉>
+<span class=標同>
+<span style="border:solid 1px">
+<table border=1>
+<tr class=單隱><td><script>rc("瘋狂<br>雲端","square");</script></td>
+  <td rowspan=2 colspan=2 width=180 valign=top class=><small>
+  <ul style="padding:10px">
+  <li>你可將資料<font color=red>傳送</font>到整合環境中寫作。
+  <li>然後從整合環境<font color=red>取回</font>批改。
+  <li>但請確定你已<font color=red>安裝</font>該編譯環境。
+  </ul></small></td></tr>
+<tr class=單隱><td height=80 align=center><table width=100% height=100%><tr>
+<td align=center frenzy_action=上傳卷宗><span style=cursor:pointer;padding:0px;><span class=ua></span><br><span class=av>上</span><br><span class=av>傳</span></span></td>
+<td align=center frenzy_action=下載卷宗><span style=cursor:pointer><span class=av>下</span><br><span class=av>載</span><br><span class=da></span></span></td></tr></table></td></tr>
+<tr><td><script>rc("瘋狂<br>程設","square");</script></td>
+<td align=left height=80 class=>
+  <table height=100%><tr><td width=80 align=center valign=middle frenzy_action=傳送卷宗><nobr><span style=cursor:pointer><span class=ah>&nbsp; 傳 送 &nbsp;</span><span class=ra></span></span></nobr></td><td rowspan=2>
+    <script>rc("<table><tr><td align=middle width=100 frenzy_action=啟動環境 frenzy_value=vc2008.sln class=範例鈕>vc2008.sln</td></tr><tr><td align=middle width=100 frenzy_action=啟動環境 frenzy_value=vc2010.sln class=範例鈕>vc2010.sln</td></tr><tr><td align=middle width=100 frenzy_action=啟動環境 frenzy_value=devc4992.dev class=範例鈕>devc4992.dev</td></tr><tr><td align=middle width=100 frenzy_action=啟動環境 frenzy_value=codeblocks1005.workspace class=範例鈕>codeblocks1005.workspace</td></tr></table>","square");</script>
+    </td></tr>
+  <tr><td align=center frenzy_action=取回卷宗><nobr><span style=cursor:pointer><span class=la></span><span class=ah>&nbsp; 取 回 &nbsp;</span></span></nobr></td></tr>
+  </table>
+</td></tr>
+</table>
+</span>
+</span>&nbsp;</span>
+
+
+</body>

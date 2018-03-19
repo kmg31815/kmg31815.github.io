@@ -1,0 +1,142 @@
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set SrcExt=cpp 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set ComExt=exe 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set BatNam=frenzybat-CCPP.bat 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set ComNam="CodeBlocks" 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set ComNam=CodeBlocks 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>echo COM=CodeBlocks 
+COM=CodeBlocks
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>if "CodeBlocks" == "Dev-Cpp" goto COM_DEVCPP 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>if "CodeBlocks" == "MinGW" goto COM_MINGW 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>if "CodeBlocks" == "CodeBlocks" goto COM_CODEBLOCKS 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set comfd=C:\Program Files (x86)\CodeBlocks\MinGW 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set comf2=C:\Program Files\CodeBlocks\MinGW 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>SET PATH=C:\Program Files (x86)\CodeBlocks\MinGW\bin;C:\Program Files\CodeBlocks\MinGW\bin; 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>SET INCLUDE=C:\Program Files (x86)\CodeBlocks\MinGW\include;C:\Program Files\CodeBlocks\MinGW\include; 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>SET LIB=C:\Program Files (x86)\CodeBlocks\MinGW\lib;C:\Program Files\CodeBlocks\MinGW\lib; 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set Run=main.exe 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set Com=g++.exe -lm -Wl,-Bstatic -m32 -omain.exe main.cpp 2 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>rem StuCom DON'T LEAVE BLANK AFTER LAST NUMBER rem set ComBin=C:\Program Files (x86)\CodeBlocks\MinGW\bin\g++.exe rem set ComBin2=C:\Program Files\CodeBlocks\MinGW\bin\g++.exe 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>goto COM_COMMON 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>call frenzybat-main.bat BatEmp        
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>rem -------------------------------------------- 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set ManSrc=main.cpp 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set ComOut=main.exe 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set TeaFld=..\ans 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set StuFld=..\stu 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set CdrTea=cd ..\ans 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set CdrStu=cd ..\stu 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>cd ..\ans   & ren main.src main.cpp 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>cd ..\stu   & ren main.src main.cpp 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set DelTeaSrc=del ..\ans\*.cpp 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set DelStuBin=del ..\stu\*.obj main.exe 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>rem set Run=main.exe 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set StuCom=g++.exe -lm -Wl,-Bstatic -m32 -omain.exe main.cpp 2>out.com.txt  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set StuRun=frenzybat.exe rungo main.exe  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set ChkStuRdy=if not "main.exe" == "" if not exist "..\stu\main.exe" goto NotStuRdy  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set TeaCom=g++.exe -lm -Wl,-Bstatic -m32 -omain.exe main.cpp 2>out.com.txt  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set TeaRun=frenzybat.exe rungo main.exe  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set ChkTeaRdy=if not "main.exe" == "" if not exist "..\ans\main.exe" goto NotTeaRdy 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>if not exist "..\ans\main.cpp" set TeaCom=    & set TeaRun=frenzybat.exe rungo main.exe    & set ChkTeaRdy=if not "main.exe" == "" if not exist "..\ans\main.exe" goto NotTeaRdy 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set CfyInp=frenzybat.exe input 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set CfySco=frenzybat.exe score 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>if "BatEmp" == "BatEmp" goto BatEmp 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>rem BatEmp 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>cd ..\stu 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>frenzybat.exe input -1 
+複製了         1 個檔案。
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>goto BatTst       
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>rem BatTst 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>cd ..\stu 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>del ..\stu\*.obj main.exe 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>g++.exe -lm -Wl,-Bstatic -m32 -omain.exe main.cpp   2>out.com.txt 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>set StuRunErr=PASS      
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>frenzybat.exe rungo main.exe  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>del out.message.txt out.score.txt out.acm.txt out.gigacycles.txt 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>frenzybat.exe rungo main.exe  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>if ERRORLEVEL 1 set StuRunErr=ERROR 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>cd ..\ans 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>g++.exe -lm -Wl,-Bstatic -m32 -omain.exe main.cpp   2>out.com.txt 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>del ..\ans\*.cpp 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>set TeaRunErr=PASS 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>frenzybat.exe rungo main.exe  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>del out.message.txt out.score.txt out.acm.txt out.gigacycles.txt 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>frenzybat.exe rungo main.exe     
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>if ERRORLEVEL 1 set TeaRunErr=ERROR    
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>if "PASS     " == "ERROR" goto StuRunErr  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>if "PASS" == "ERROR" goto TeaRunErr  
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>cd ..\stu 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>frenzybat.exe score 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>goto End 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>rem End 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\stu>cd ..\ans 
+
+D:\c\CFData\SID-310262\CPPTEST-001-(2017-0531-2019-32)(894d0b86-a2d8-4010-ae7b-85606b351bd1)\ans>cd ..\stu 
